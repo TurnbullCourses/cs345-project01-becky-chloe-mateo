@@ -3,24 +3,26 @@
 ## Project 01 - Bank Software
 
 Names:
-<< add 3-4 names here >>
+Mateo
+Chloe
+Becky
 
 Link to UML Use Case Diagram:
-<< add linkk here >>
+https://drive.google.com/file/d/1OOnLzNTZjQehSUgIqXF-Ii6Le_Y_S-Kb/view?usp=sharing
 
 Link to UML Class Diagram:
-<< add link here >>
+https://drive.google.com/file/d/14SnEDGRrtozaFU3eA_qboagn9J-kytWj/view?usp=sharing
 
 Three Use Cases that you will implement first:
-1. -
-2. - 
-3. - 
+1. createAccount
+2. deposit 
+3. withdraw
 
 Which classes & methods do you need to implement for these use cases?
 (Indicated which team member is responsible for the implemenation)
-1. -
-2. -
-3. -
+1. Account
+2. savingsAccount
+3. checkingAccount
 4. -
 5. << add more as needed >>
 
