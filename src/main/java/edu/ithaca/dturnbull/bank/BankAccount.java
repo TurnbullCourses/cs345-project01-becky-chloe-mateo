@@ -25,7 +25,9 @@ public class BankAccount {
     public String getEmail(){
         return email;
     }
-
+    public void deposit(double amount) throws IllegalArgumentException{
+        
+    }
     /**
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
      */
