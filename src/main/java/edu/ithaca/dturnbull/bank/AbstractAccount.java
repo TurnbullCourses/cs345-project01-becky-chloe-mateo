@@ -50,7 +50,7 @@ abstract class AbstractAccount {
     }
 
     public String getHistory() {
-        return password;
+        return null;
     }
 
     public Boolean checkPassword(String accountNumber) {
