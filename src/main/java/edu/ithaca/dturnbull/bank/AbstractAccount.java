@@ -73,7 +73,7 @@ abstract class Account {
     }
 
     public String getHistory() {
-        return balance;
+        return getHistory();
     }
 
     public Boolean checkPassword(String accountNumber) {
