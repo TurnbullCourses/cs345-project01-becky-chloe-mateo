@@ -1,10 +1,10 @@
 package edu.ithaca.dturnbull.bank;
 
-abstract class Account {
+abstract class AbstractAccount {
     String password;
     double balance;
     String transactionHistory;
-    public Account(String password, double balance) {
+    public AbstractAccount(String password, double balance) {
         this.password = password;
         this.balance = balance;
     }
@@ -34,15 +34,6 @@ abstract class Account {
     }
 
     public void withdraw(double amount) throws InsufficientFundsException {
-        if (isAmountValid(amount)) {
-            if (amount <= balance) {
-                balance -= amount;
-            } else {
-                throw new InsufficientFundsException("Not enough money");
-            }
-        } else {
-            throw new IllegalArgumentException("Invalid Withdraw Amount");
-        }
 
     }
 
@@ -51,36 +42,20 @@ abstract class Account {
     }
 
     public void deposit(double amount) throws InsufficientFundsException {
-        if (isAmountValid(amount)) {
-            balance += amount;
-        } else {
-            throw new IllegalArgumentException("Invalid Deposit Amount");
-        }
+
     }
 
-    public void transfer(Account sender, Account receiver, double amount) throws InsufficientFundsException {
-        // check if accounts are the same
-        if (sender == receiver) {
-            throw new IllegalArgumentException("Account cannot transfer to itself!");
-        }
+    public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
 
-        if (isAmountValid(amount)) {
-            sender.withdraw(amount);
-            receiver.deposit(amount);
-        } else {
-            throw new IllegalArgumentException("Invalid Transfer Amount");
-        }
     }
 
     public String getHistory() {
-        return getHistory();
+        return password;
     }
 
     public Boolean checkPassword(String accountNumber) {
-        if(accountNumber==password){
-            return true;
-        }
-        return false;
+        return null;
+
     }
 
 }
