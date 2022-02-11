@@ -1,11 +1,5 @@
 package edu.ithaca.dturnbull.bank;
 
-<<<<<<< HEAD
-public class AbstractAccount {
-
-    private String email;
-    private double balance;
-=======
     abstract class Account {
         String password;
         double balance;
@@ -87,7 +81,6 @@ public class AbstractAccount {
         public Boolean checkPassword(String password){
             return null;
          }
->>>>>>> a24a2590c5fde561778e4e27399e6062664badb5
     
     public void withdraw(String email, double amount) throws InsufficientFundsException{
         if(amount < balance){
