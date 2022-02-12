@@ -1,12 +1,15 @@
 package edu.ithaca.dturnbull.bank;
 
 public class SavingsAccount extends AbstractAccount {
+    double dailyMax;
 
-    double maxWithdraw = 1000;
-    
-    void withdraw(String email, double amount) throws IllegalArgumentException{
-        if(maxWithdraw >amount){
-            throw new IllegalArgumentException("exceeds max withdraw");
-        }
+    public SavingsAccount(String password, double balance) {
+        super(password, balance);
+        //TODO Auto-generated constructor stub
+        
     }
+
+
 }
+
+    
