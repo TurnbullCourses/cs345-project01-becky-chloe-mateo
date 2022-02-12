@@ -1,10 +1,12 @@
+package edu.ithaca.dturnbull.bank;
 import org.junit.jupiter.api.Test;
+import edu.ithaca.dturnbull.bank.InsufficientFundsException;
 import static org.junit.jupiter.api.Assertions.*;
 
-
-public class AbstractAccountTest {
+class AbstractAccountTest {
+    
     @Test
-    void withdrawTest(){
+    void withdrawTest() throws InsufficientFundsException{
         CheckingAccount checkAcc = new CheckingAccount("a@b.com", 200); //Checking
         checkAcc.withdraw(100); //Normal Withdraw
 

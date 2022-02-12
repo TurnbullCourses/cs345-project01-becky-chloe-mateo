@@ -48,13 +48,11 @@ abstract class AbstractAccount {
             return null;
          }
     
-    public void withdraw(String email, double amount) throws InsufficientFundsException{
-        if(amount < balance){
-            throw new InsufficientFundsException("Not enough money");
+        public void withdraw(double amount) throws InsufficientFundsException {
+            if(amount < balance){
+                throw new InsufficientFundsException("Not enough money");
             }
-        balance -= amount;
-    public void withdraw(double amount) throws InsufficientFundsException {
-
+            balance -= amount;
     }
 
     public double checkBalance() {
