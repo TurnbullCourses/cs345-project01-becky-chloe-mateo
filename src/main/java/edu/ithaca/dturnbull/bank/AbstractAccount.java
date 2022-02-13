@@ -1,13 +1,4 @@
 package edu.ithaca.dturnbull.bank;
-
-    abstract class Account {
-        String password;
-        double balance;
-        
-        public Account(String password, double balance){
-            this.password=password;
-            this.balance=balance;
-        }
 abstract class AbstractAccount {
     String password;
     double balance;
@@ -41,35 +32,29 @@ abstract class AbstractAccount {
         return true;
     }
 
-        public String getHistory(){
+    public String getHistory(){
             return getHistory();
         }
         public Boolean checkPassword(String password){
             return null;
-         }
+        }
     
-        public void withdraw(double amount) throws InsufficientFundsException {
-            if(amount < balance){
-                throw new InsufficientFundsException("Not enough money");
-            }
-            balance -= amount;
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if(amount < balance){
+           throw new InsufficientFundsException("Not enough money");
+        }
+        balance -= amount;
     }
 
     public double checkBalance() {
         return balance;
     }
 
-    public void deposit(double amount) throws InsufficientFundsException {
-
+    public void deposit(double amount){
+            balance += amount;
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
 
     }
-
-    public String getHistory() {
-        return null;
-    }
-
-
 }
