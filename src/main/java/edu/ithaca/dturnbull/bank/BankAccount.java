@@ -26,7 +26,7 @@ public class BankAccount {
         return email;
     }
     public void deposit(double amount) throws IllegalArgumentException{
-        
+        balance+=amount;
     }
     /**
      * @post reduces the balance by amount if amount is non-negative and smaller than balance
