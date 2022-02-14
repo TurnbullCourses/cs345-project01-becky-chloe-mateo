@@ -45,7 +45,7 @@ public class SavingsAccount extends AbstractAccount {
         return true;
     }
 
-    public double checkBalance() {
+    public double getBalance() {
         return balance;
     }
 

@@ -37,7 +37,7 @@ abstract class AbstractAccount {
 
     }
 
-    public double checkBalance() {
+    public double getBalance() {
         return balance;
     }
 

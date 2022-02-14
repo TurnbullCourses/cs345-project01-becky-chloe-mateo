@@ -33,7 +33,7 @@ public class CheckingAccount extends AbstractAccount{
 
     }
 
-    public double checkBalance() {
+    public double getBalance() {
         return balance;
     }
 
