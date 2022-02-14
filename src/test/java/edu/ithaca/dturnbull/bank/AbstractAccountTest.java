@@ -1,10 +1,13 @@
+package edu.ithaca.dturnbull.bank;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import edu.ithaca.dturnbull.bank.InsufficientFundsException;
 
-public class AbstractAccountTest {
+class AbstractAccountTest {
+
     @Test
-    void withdrawTest(){
+    void withdrawTest() throws InsufficientFundsException{
         CheckingAccount checkAcc = new CheckingAccount("a@b.com", 200); //Checking
         checkAcc.withdraw(100); //Normal Withdraw
 
@@ -18,3 +21,4 @@ public class AbstractAccountTest {
         assertThrows(IllegalArgumentException.class, () -> savingAcc.withdraw(1005)); //Over Max Withdrawal
     }
 }
+
