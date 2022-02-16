@@ -21,6 +21,7 @@ class AbstractAccountTest {
         assertThrows(IllegalArgumentException.class, () -> savingAcc.withdraw(1005)); //Over Max Withdrawal
     }
 
+    @Test
     void createAccountTest(){
         //Creates a Savings Account
         BankTeller.createAccount("Savings","1234",0,1200);
