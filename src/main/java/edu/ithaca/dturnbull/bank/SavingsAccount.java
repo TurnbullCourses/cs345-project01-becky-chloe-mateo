@@ -10,9 +10,13 @@ public class SavingsAccount extends AbstractAccount {
     }
 
     public void withdraw(double amount) throws IllegalArgumentException {
-        if(amount>dailyMax){
+        if(amount>balance){
+            throw new IllegalArgumentException("not enough funds");
+        }
+        else if(amount>dailyMax){
             throw new IllegalArgumentException("exceeds daily maximum");
         }
+        
         balance -= amount;
     }
 

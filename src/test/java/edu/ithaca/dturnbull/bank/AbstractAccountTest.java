@@ -14,10 +14,10 @@ class AbstractAccountTest {
         assertEquals(100, checkAcc.getBalance(), 0.001);
         assertThrows(InsufficientFundsException.class, () -> checkAcc.withdraw(300)); //Insufficient Funds
 
-        SavingsAccount savingAcc = new SavingsAccount("a@b.com", 1500, 2000); //Savings
+        SavingsAccount savingAcc = new SavingsAccount("a@b.com", 1500, 1000); //Savings
         savingAcc.withdraw(100);
 
-        assertEquals(1400, checkAcc.getBalance(), 0.001);
+        assertEquals(1400, savingAcc.getBalance(), 0.001);
         assertThrows(IllegalArgumentException.class, () -> savingAcc.withdraw(1005)); //Over Max Withdrawal
     }
 

@@ -29,8 +29,11 @@ public class CheckingAccount extends AbstractAccount{
         return true;
     }
 
-    public void withdraw(double amount) throws InsufficientFundsException {
-
+    public void withdraw(double amount) throws InsufficientFundsException{
+        if(amount>balance){
+            throw new InsufficientFundsException("not enough funds");
+        }
+        balance -= amount;
     }
 
     public double getBalance() {
