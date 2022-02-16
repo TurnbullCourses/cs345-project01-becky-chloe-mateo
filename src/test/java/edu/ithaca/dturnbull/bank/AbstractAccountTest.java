@@ -32,7 +32,7 @@ class AbstractAccountTest {
         SavingsAccount savingAcc = new SavingsAccount("a@b.com", 100); //Savings
         savingAcc.deposit(100);
 
-        assertEquals(200, checkAcc.checkBalance(), 0.001);
+        assertEquals(299, checkAcc.checkBalance(), 0.001);
     }
 }
 
