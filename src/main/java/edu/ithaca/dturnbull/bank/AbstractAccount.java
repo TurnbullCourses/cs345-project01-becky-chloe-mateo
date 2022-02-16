@@ -45,7 +45,10 @@ abstract class AbstractAccount {
     }
 
     public void deposit(double amount) throws InsufficientFundsException {
-
+        if(amount>0){
+            balance += amount;
+        }
+        else throw new InsufficientFundsException("cannot deposit negative number");
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
