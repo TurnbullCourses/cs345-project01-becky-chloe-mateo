@@ -21,6 +21,7 @@ class AbstractAccountTest {
         assertThrows(IllegalArgumentException.class, () -> savingAcc.withdraw(1005)); //Over Max Withdrawal
     }
 
+    @Test
     void createAccountTest(){
         //Creates a Savings Account
         BankTeller.createAccount("Savings","1234",0,1200);
@@ -28,6 +29,16 @@ class AbstractAccountTest {
         //Creates a Checking Account
         BankTeller.createAccount("Checking","1234",0,0);
 
+    }
+
+    @Test
+    void depositTest(){
+        CheckingAccount checkAcc = new CheckingAccount("a@b.com", 200);//Checking
+        checkAcc.deposit(100);
+        assertEquals(300, checkAcc.getBalance()); //deposits normal amount
+
+        SavingsAccount savingAcc = new SavingsAccount("a@b.com", 1500, 1000); //Saving
+        assertThrows(IllegalArgumentException.class, () -> savingAcc.deposit(-1));
     }
 }
 

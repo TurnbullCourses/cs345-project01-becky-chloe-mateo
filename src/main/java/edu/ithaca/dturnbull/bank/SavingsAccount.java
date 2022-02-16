@@ -53,8 +53,11 @@ public class SavingsAccount extends AbstractAccount {
         return balance;
     }
 
-    public void deposit(double amount) throws InsufficientFundsException {
-
+    public void deposit(double amount) throws IllegalArgumentException {
+        if(amount>0){
+            balance += amount;
+        }
+        else throw new IllegalArgumentException("cannot deposit negative number");
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
