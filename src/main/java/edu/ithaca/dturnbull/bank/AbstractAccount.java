@@ -50,8 +50,11 @@ abstract class AbstractAccount {
         return balance;
     }
 
-    public void deposit(double amount){
+    public void deposit(double amount) throws IllegalArgumentException{
             balance += amount;
+            if(amount < 0){
+                throw new IllegalArgumentException("Cannot deposit");
+            }
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
