@@ -45,7 +45,7 @@ abstract class AbstractAccount {
     }
 
     public void deposit(double amount) throws InsufficientFundsException {
-
+        
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {

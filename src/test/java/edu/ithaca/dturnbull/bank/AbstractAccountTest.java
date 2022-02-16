@@ -29,5 +29,24 @@ class AbstractAccountTest {
         BankTeller.createAccount("Checking","1234",0,0);
 
     }
+
+    @Test
+    void depositTest() throws InsufficientFundsException{
+        CheckingAccount account1=new CheckingAccount("a@b.com",500); //new checking account
+        //valid positive amount
+        account1.deposit(100); 
+        assertEquals(600, account1.getBalance(), .001);
+
+        account1.deposit(0.01);
+        assertEquals(600.01, account1.getBalance(), .001);
+
+        //Negative amount
+        assertThrows(IllegalArgumentException.class, () -> account1.deposit(-100));
+        assertThrows(IllegalArgumentException.class, () -> account1.deposit(-0.01)); 
+
+        //Amount with more than 2 decimals
+        assertThrows(IllegalArgumentException.class, () -> account1.deposit(100.23467435));
+        assertThrows(IllegalArgumentException.class, () -> account1.deposit(100.234));
+    }
 }
 
