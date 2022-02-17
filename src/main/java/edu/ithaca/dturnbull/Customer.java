@@ -2,11 +2,12 @@ package edu.ithaca.dturnbull;
 
 public class Customer {
     String password;
-    double balance;
-    public Customer(String password, double balance) {
+    String listofaccounts;
+    public Customer(String password) {
         this.password = password;
-        this.balance = balance;
     }
+
+    //Check Password
     public boolean checkPassword(String passInput){
         if(password == passInput){
             return true;
