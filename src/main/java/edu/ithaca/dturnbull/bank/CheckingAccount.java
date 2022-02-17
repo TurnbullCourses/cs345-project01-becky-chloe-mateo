@@ -40,7 +40,6 @@ public class CheckingAccount extends AbstractAccount{
         return balance;
     }
 
-<<<<<<< HEAD
     public void deposit(double amount) throws InsufficientFundsException {
         if(isAmountValid(amount)){
             balance += amount;
@@ -48,13 +47,6 @@ public class CheckingAccount extends AbstractAccount{
         else{
             throw new IllegalArgumentException("Invalid Deposit Amount");
         }
-=======
-    public void deposit(double amount) throws IllegalArgumentException {
-        if(amount>0){
-            balance += amount;
-        }
-        else throw new IllegalArgumentException("cannot deposit negative number");
->>>>>>> 0a52e919cbf11ff5d3013dec7456e480d550ea7b
     }
 
     public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
