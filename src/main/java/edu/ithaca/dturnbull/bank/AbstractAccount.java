@@ -53,27 +53,24 @@ abstract class AbstractAccount {
         }
     }
 
-    public static void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
-        //check if accounts are the same
-        if(sender == receiver){
-            throw new IllegalArgumentException("Account cannot transfer to itself!");
-        }
+    public void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
 
-        if(isAmountValid(amount)){
-            sender.withdraw(amount);
-            receiver.deposit(amount);
-        }
-        else{
-            throw new IllegalArgumentException("Invalid Transfer Amount");
-        }
     }
 
     public String getHistory() {
         return null;
     }
 
-    public Boolean checkPassword(String accountNumber) {
-        return null;
+    public Boolean checkPassword(String password) {
+        int charCount = 0;
+        int numCount = 0;
+        if (password.length() < 8 ){
+            return false;
+        }
+
+        for (int i=0;i < password.length() )
+            char ch = password.charAt(i);
+
 
     }
 
