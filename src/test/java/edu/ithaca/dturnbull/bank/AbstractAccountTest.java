@@ -49,5 +49,43 @@ class AbstractAccountTest {
         assertThrows(IllegalArgumentException.class, () -> account1.deposit(100.23467435));
         assertThrows(IllegalArgumentException.class, () -> account1.deposit(100.234));
     }
-}
+
+    @Test 
+    void transferTest() throws InsufficientFundsException{
+        AbstractAccount bankAccount1 = new CheckingAccount("a@b.com", 50);
+        AbstractAccount bankAccount2 = new CheckingAccount("b@a.com", 50);
+
+        //Valid non-negative amount and valid sender and receiver
+        CheckingAccount.transfer(bankAccount1, bankAccount2, 25);
+        assertEquals(25, bankAccount1.getBalance(), .001);
+        assertEquals(75, bankAccount2.getBalance(), .001);
+
+        //transferring 0
+        CheckingAccount.transfer(bankAccount1, bankAccount2, 0);
+        assertEquals(25, bankAccount1.getBalance(), .001); //Border
+        assertEquals(75, bankAccount2.getBalance(), .001); //Border
+
+        //transferring all the money from 1 account
+        CheckingAccount.transfer(bankAccount2, bankAccount1, 75);
+        assertEquals(100, bankAccount1.getBalance(), .001); //Border
+        assertEquals(0, bankAccount2.getBalance(), .001); //Border
+
+        //2 decimal transfer
+        CheckingAccount.transfer(bankAccount1, bankAccount2, 99.99);
+        assertEquals(.01, bankAccount1.getBalance(), .001); //Border
+        assertEquals(99.99, bankAccount2.getBalance(), .001); //Border
+
+        //Exceptions
+        assertThrows(InsufficientFundsException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, 500));
+        assertThrows(InsufficientFundsException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, 729));
+
+        assertThrows(IllegalArgumentException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount1, 0));
+
+        assertThrows(IllegalArgumentException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, -25));
+        assertThrows(IllegalArgumentException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, -9.99)); 
+
+        assertThrows(IllegalArgumentException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, 30.6594));
+        assertThrows(IllegalArgumentException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount1, 12.12901));
+    }
+    }
 
