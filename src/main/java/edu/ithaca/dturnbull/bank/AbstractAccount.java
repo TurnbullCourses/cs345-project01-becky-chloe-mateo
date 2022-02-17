@@ -72,17 +72,4 @@ abstract class AbstractAccount {
         return null;
     }
 
-    public Boolean checkPassword(String password) {
-        int charCount = 0;
-        int numCount = 0;
-        if (password.length() < 8 ){
-            return false;
-        }
-
-        for (int i=0;i < password.length() )
-            char ch = password.charAt(i);
-
-
-    }
-
 }
