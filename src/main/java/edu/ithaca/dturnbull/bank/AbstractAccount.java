@@ -69,7 +69,7 @@ abstract class AbstractAccount {
     }
 
     public String getHistory() {
-        return null;
+        return transactionHistory;
     }
 
 }
