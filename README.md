@@ -2,16 +2,20 @@
 # CS345 - Software Engineering at Ithaca College
 ## Project 01 - Bank Software
 
-Names:
+Names: 
 Mateo
 Chloe
 Becky
 
-Link to UML Use Case Diagram:
-https://drive.google.com/file/d/1OOnLzNTZjQehSUgIqXF-Ii6Le_Y_S-Kb/view?usp=sharing
+UML Use Case Diagram: https://drive.google.com/file/d/1OOnLzNTZjQehSUgIqXF-Ii6Le_Y_S-Kb/view?usp=sharing
 
-Link to UML Class Diagram:
-https://drive.google.com/file/d/14SnEDGRrtozaFU3eA_qboagn9J-kytWj/view?usp=sharing
+UML Class Diagram: https://drive.google.com/file/d/14SnEDGRrtozaFU3eA_qboagn9J-kytWj/view?usp=sharing
+
+UML Sequence Diagram: https://drive.google.com/file/d/1ypkNQmxGoJJnD3i6ZtqMP-Ryw8BZwrZD/view?usp=sharing
+
+UML State Diagram: https://drive.google.com/file/d/1W2eJ6AbohLsMB5cYotQnlu6vKF33-__N/view?usp=sharing
+
+User Test Script: https://docs.google.com/document/d/1r6P4HvWyoVJCXniTFBeOhMqZHBZvOP9_gbXvpaMr3zI/edit?usp=sharing
 
 Three Use Cases that you will implement first:
 1. createAccount
@@ -23,13 +27,6 @@ Which classes & methods do you need to implement for these use cases?
 1. Account
 2. savingsAccount
 3. checkingAccount
-4. -
-5. << add more as needed >>
+4. Customer
 
-Don't forget to use Test-Driven Development (TDD)
-1. Write Class and Method Function Headers
-2. Write Tests
-3. Implement Method Functions
-
-Good Luck!
 
