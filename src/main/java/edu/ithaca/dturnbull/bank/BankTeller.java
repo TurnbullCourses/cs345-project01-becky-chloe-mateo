@@ -1,6 +1,6 @@
 package edu.ithaca.dturnbull.bank;
 
-public class BankTeller extends AbstractBank {
+public class BankTeller extends AbstractBankTeller {
 
     public static AbstractAccount createAccount(String typeOfAccount, String password, double balance, double dailyMax) {
         if (typeOfAccount == "Savings") {
