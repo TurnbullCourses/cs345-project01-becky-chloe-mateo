@@ -3,7 +3,7 @@ package edu.ithaca.dturnbull.bank;
 abstract class AbstractAccount {
     String password;
     double balance;
-    String transactionHistory;
+    static String transactionHistory;
     public AbstractAccount(String password, double balance) {
         this.password = password;
         this.balance = balance;
@@ -38,6 +38,7 @@ abstract class AbstractAccount {
             throw new InsufficientFundsException("not enough funds");
         }
         balance -= amount;
+        transactionHistory+="Withdraw: " + amount + ","; //Add to transaction history
     }
 
     public double getBalance() {
@@ -47,6 +48,7 @@ abstract class AbstractAccount {
     public void deposit(double amount) throws InsufficientFundsException {
         if(isAmountValid(amount)){
             balance += amount;
+            transactionHistory+="Deposit: " + amount + ","; //Add to transaction history
         }
         else{
             throw new IllegalArgumentException("Invalid Deposit Amount");
@@ -62,6 +64,7 @@ abstract class AbstractAccount {
         if(isAmountValid(amount)){
             sender.withdraw(amount);
             receiver.deposit(amount);
+            transactionHistory+="Transfer: " + amount + "from" + sender + "to" + receiver + ","; //Add to transaction history
         }
         else{
             throw new IllegalArgumentException("Invalid Transfer Amount");
