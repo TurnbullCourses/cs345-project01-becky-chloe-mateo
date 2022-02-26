@@ -4,8 +4,8 @@ public class SavingsAccount extends AbstractAccount {
 
     double dailyMax;
 
-    public SavingsAccount(String password, double balance, double dailyMax) {
-        super(password, balance);
+    public SavingsAccount(double balance, double dailyMax) {
+        super(balance);
         this.dailyMax=dailyMax;
     }
 

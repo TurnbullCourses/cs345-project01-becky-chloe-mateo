@@ -2,15 +2,13 @@ package edu.ithaca.dturnbull.bank;
 
 public class BankAccount {
 
-    private String email;
     private double balance;
 
     /**
      * @throws IllegalArgumentException if email is invalid
      */
     public BankAccount(String email, double startingBalance){
-        if (isEmailValid(email)){
-            this.email = email;
+        if (Customer.isEmailValid(email)){
             this.balance = startingBalance;
         }
         else {
@@ -22,9 +20,7 @@ public class BankAccount {
         return balance;
     }
 
-    public String getEmail(){
-        return email;
-    }
+
     public void deposit(double amount) throws IllegalArgumentException{
         balance+=amount;
     }
@@ -40,13 +36,4 @@ public class BankAccount {
         }
     }
 
-
-    public static boolean isEmailValid(String email){
-        if (email.indexOf('@') == -1){
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
 }

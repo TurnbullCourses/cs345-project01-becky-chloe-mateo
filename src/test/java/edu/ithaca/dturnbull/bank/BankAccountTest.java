@@ -23,8 +23,8 @@ class BankAccountTest {
     
         @Test
         void isEmailValidTest(){
-            assertTrue(BankAccount.isEmailValid( "a@b.com"));   // valid email address
-            assertFalse( BankAccount.isEmailValid(""));         // empty string
+            assertTrue(Customer.isEmailValid( "a@b.com"));   // valid email address
+            assertFalse( Customer.isEmailValid(""));         // empty string
     
             
         }
@@ -32,8 +32,9 @@ class BankAccountTest {
         @Test
         void constructorTest() {
             BankAccount bankAccount = new BankAccount("a@b.com", 200);
+            Customer customer = new Customer("a@b.com", "bts");
     
-            assertEquals("a@b.com", bankAccount.getEmail());
+            assertEquals("a@b.com", customer.getEmail());
             assertEquals(200, bankAccount.getBalance(), 0.001);
             //check for exception thrown correctly
             assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
