@@ -18,15 +18,15 @@ UML State Diagram: https://drive.google.com/file/d/1W2eJ6AbohLsMB5cYotQnlu6vKF33
 User Test Script: https://docs.google.com/document/d/1r6P4HvWyoVJCXniTFBeOhMqZHBZvOP9_gbXvpaMr3zI/edit?usp=sharing
 
 Three Use Cases that you will implement first:
-1. createAccount
-2. deposit 
-3. withdraw
+1. createAccount: Mateo
+2. deposit: Chloe
+3. withdraw: Becky
 
 Which classes & methods do you need to implement for these use cases?
 (Indicated which team member is responsible for the implemenation)
-1. Account
-2. savingsAccount
-3. checkingAccount
-4. Customer
+1. AbstractAccount: Chloe, Mateo, Becky
+2. SavingsAccount: Becky, 
+3. CheckingAccount: 
+4. Customer: Becky, 
 
 
