@@ -4,11 +4,15 @@ public abstract class AbstractAccount {
 
     double balance;
     static String transactionHistory;
+    static boolean suspiciousActivity=false;
+
 
     public AbstractAccount(double balance){
         this.balance = balance;
 
     }
+
+  
     public static boolean isAmountValid(double amount) {
         // negative amounts
         if (amount < 0) {
@@ -35,7 +39,12 @@ public abstract class AbstractAccount {
 
     public void withdraw(double amount) throws InsufficientFundsException {
         if(amount>this.balance){
+            suspiciousActivity=true;
             throw new InsufficientFundsException("not enough funds");
+            
+        }
+        if(amount==balance){
+            suspiciousActivity=true;
         }
         this.balance -= amount;
         transactionHistory+="Withdraw: " + amount + ", "; //Add to transaction history
@@ -51,13 +60,16 @@ public abstract class AbstractAccount {
             transactionHistory+="Deposit: " + amount + ", "; //Add to transaction history
         }
         else{
+            suspiciousActivity=true;
             throw new IllegalArgumentException("Invalid Deposit Amount");
+            
         }
     }
 
     public static void transfer(AbstractAccount sender, AbstractAccount receiver, double amount) throws InsufficientFundsException {
         //check if accounts are the same
         if(sender == receiver){
+            suspiciousActivity=true;
             throw new IllegalArgumentException("Account cannot transfer to itself!");
         }
 
@@ -67,12 +79,17 @@ public abstract class AbstractAccount {
             transactionHistory+="Transfer: " + amount + "from" + sender + "to" + receiver + ", "; //Add to transaction history
         }
         else{
+            suspiciousActivity=true;
             throw new IllegalArgumentException("Invalid Transfer Amount");
         }
     }
 
     public String getHistory() {
         return transactionHistory;
+    }
+
+    public boolean getSuspiciousActivity(){
+        return suspiciousActivity;
     }
 
 }
