@@ -4,9 +4,10 @@ public class BankTeller extends AbstractBankTeller {
 
     public static AbstractAccount createAccount(String typeOfAccount, String password, double balance, double dailyMax) {
         if (typeOfAccount == "Savings") {
-            AbstractAccount savingsAccount = new SavingsAccount(balance, dailyMax);
+            AbstractAccount savingsAccount = new SavingsAccount(null, balance, dailyMax);
             return savingsAccount;
-        } else {
+        } 
+        else {
             AbstractAccount checkingAccount = new CheckingAccount(balance);
             return checkingAccount;
         }
