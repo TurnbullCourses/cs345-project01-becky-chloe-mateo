@@ -13,8 +13,19 @@ public class Admin extends AbstractBank {
             System.out.print("There has been suspicious activity on this account");
             return AbstractAccount.transactionHistory;
         }
-        
+
         return null;
         
+    }
+
+    private double checkOverallAmount(){
+        return 0;
+    }
+    private void freezeAccount(){
+        
+    }
+
+    private void unfreezeAccount(){
+
     }
 }
