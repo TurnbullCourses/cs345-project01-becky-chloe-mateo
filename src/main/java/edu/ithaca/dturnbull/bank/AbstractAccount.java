@@ -38,7 +38,7 @@ public abstract class AbstractAccount {
             throw new InsufficientFundsException("not enough funds");
         }
         this.balance -= amount;
-        transactionHistory+="Withdraw: " + amount + ","; //Add to transaction history
+        transactionHistory+="Withdraw: " + amount + ", "; //Add to transaction history
     }
 
     public double getBalance() {
@@ -48,7 +48,7 @@ public abstract class AbstractAccount {
     public void deposit(double amount) throws InsufficientFundsException {
         if(isAmountValid(amount)){
             this.balance += amount;
-            transactionHistory+="Deposit: " + amount + ","; //Add to transaction history
+            transactionHistory+="Deposit: " + amount + ", "; //Add to transaction history
         }
         else{
             throw new IllegalArgumentException("Invalid Deposit Amount");
@@ -64,7 +64,7 @@ public abstract class AbstractAccount {
         if(isAmountValid(amount)){
             sender.withdraw(amount);
             receiver.deposit(amount);
-            transactionHistory+="Transfer: " + amount + "from" + sender + "to" + receiver + ","; //Add to transaction history
+            transactionHistory+="Transfer: " + amount + "from" + sender + "to" + receiver + ", "; //Add to transaction history
         }
         else{
             throw new IllegalArgumentException("Invalid Transfer Amount");
