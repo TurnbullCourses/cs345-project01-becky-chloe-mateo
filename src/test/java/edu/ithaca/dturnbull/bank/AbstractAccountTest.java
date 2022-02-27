@@ -10,12 +10,14 @@ class AbstractAccountTest {
     void withdrawTest() throws InsufficientFundsException{
  
         CheckingAccount checkAcc = new CheckingAccount(0); //Checking
+        Customer jim = new Customer("jim123","1234");
+
         checkAcc.deposit(100); //Normal deposit
 
         assertEquals(100, checkAcc.getBalance(), 0.001);
         assertThrows(InsufficientFundsException.class, () -> checkAcc.withdraw(300)); //Insufficient Funds
 
-        SavingsAccount savingAcc = new SavingsAccount(1500, 1000); //Savings
+        SavingsAccount savingAcc = new SavingsAccount(jim, 1500, 1000); //Savings
         savingAcc.withdraw(100);
 
         assertEquals(1400, savingAcc.getBalance(), 0.001);
