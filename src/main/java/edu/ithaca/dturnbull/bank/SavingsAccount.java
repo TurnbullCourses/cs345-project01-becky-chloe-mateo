@@ -4,7 +4,7 @@ public class SavingsAccount extends AbstractAccount {
 
     double dailyMax;
 
-    public SavingsAccount(double balance, double dailyMax) {
+    public SavingsAccount(Customer customer, double balance, double dailyMax) {
         super(balance);
         this.dailyMax=dailyMax;
     }
@@ -18,6 +18,7 @@ public class SavingsAccount extends AbstractAccount {
         }
         
         balance -= amount;
+        transactionHistory+="Withdraw: " + amount + ", "; //Add to transaction history
     }
 
     public double compoundInterest(double interest,int numOfCompund){
@@ -56,6 +57,7 @@ public class SavingsAccount extends AbstractAccount {
     public void deposit(double amount) throws IllegalArgumentException {
         if(amount>0){
             balance += amount;
+            transactionHistory+="Deposit: " + amount + ", "; //Add to transaction history
         }
         else throw new IllegalArgumentException("cannot deposit negative number");
     }
@@ -69,6 +71,7 @@ public class SavingsAccount extends AbstractAccount {
         if(isAmountValid(amount)){
             sender.withdraw(amount);
             receiver.deposit(amount);
+            transactionHistory+="Transfer: " + amount + "from" + sender + "to" + receiver + ", "; //Add to transaction history
         }
         else{
             throw new IllegalArgumentException("Invalid Transfer Amount");
@@ -76,12 +79,7 @@ public class SavingsAccount extends AbstractAccount {
     }
 
     public String getHistory() {
-        return null;
-    }
-
-    public Boolean checkPassword(String accountNumber) {
-        return null;
-
+        return transactionHistory;
     }
 
 
