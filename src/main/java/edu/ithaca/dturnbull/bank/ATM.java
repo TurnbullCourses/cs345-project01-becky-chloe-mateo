@@ -1,7 +1,13 @@
 package edu.ithaca.dturnbull.bank;
 
 public class ATM extends AbstractBankTeller {
+
+    public ATM(Customer customer){
+
+        
+    }
     
+
     public double getBalance(){
         return 0.0;
 
