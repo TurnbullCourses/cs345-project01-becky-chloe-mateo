@@ -29,4 +29,11 @@ Which classes & methods do you need to implement for these use cases?
 3. CheckingAccount: 
 4. Customer: Becky, 
 
+Diagrams:
+1. State: Chloe, Mateo, Becky
+2. Use Case: Chloe, Mateo, Becky
+3. Class: Chloe, Mateo, Becky
+4. Customer Sequence: Chloe
+5. Admin Sequence: Mateo
+6. Teller Sequence: Becky
 
