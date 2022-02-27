@@ -82,6 +82,10 @@ public class SavingsAccount extends AbstractAccount {
         return transactionHistory;
     }
 
+    public double getDailyMax(){
+        return dailyMax;
+    }
+
 
 }
 
