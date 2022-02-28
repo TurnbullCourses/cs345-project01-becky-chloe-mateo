@@ -25,4 +25,22 @@ public class SystemTest1 {
         assertEquals(adminAccount.requestReport(jimsAccount),"nullDeposit: 250.0, Withdraw: 500.0, ");
 
     }
+    @Test
+    void systemTest2() throws InsufficientFundsException{ //written by Becky
+        Customer pam = new Customer("pambeesly.com", "abcd");
+        Admin adminAccount = new Admin("admin", "abcd");
+        BankTeller bankTeller = new BankTeller("bankTeller", "abcd");
+        assertEquals(pam.getAccounts(), null);
+
+        CheckingAccount pamsCheck = new CheckingAccount(pam, 100);
+        assertEquals(pamsCheck.getHistory(), "");
+        assertTrue(pam.checkPassword("abcd"));
+        
+        SavingsAccount pamsSaving = new SavingsAccount(pam, 500, 1000);
+        assertEquals(pamsSaving.getHistory(), "");
+
+        pamsSaving.transfer(pamsSaving, pamsCheck, 100);
+        assertEquals(400, pamsSaving.getBalance());
+        assertFalse(pamsSaving.getSuspiciousActivity());
+    }
 }

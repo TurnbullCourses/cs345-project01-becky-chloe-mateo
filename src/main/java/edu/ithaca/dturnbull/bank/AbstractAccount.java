@@ -3,7 +3,7 @@ package edu.ithaca.dturnbull.bank;
 public abstract class AbstractAccount {
 
     double balance;
-    static String transactionHistory;
+    static String transactionHistory = "";
     static boolean suspiciousActivity=false;
 
 
