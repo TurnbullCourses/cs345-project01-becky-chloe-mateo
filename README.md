@@ -12,6 +12,7 @@ UML Use Case Diagram: https://drive.google.com/file/d/1OOnLzNTZjQehSUgIqXF-Ii6Le
 UML Class Diagram: https://drive.google.com/file/d/14SnEDGRrtozaFU3eA_qboagn9J-kytWj/view?usp=sharing
 
 UML Sequence Diagram: https://drive.google.com/file/d/1ypkNQmxGoJJnD3i6ZtqMP-Ryw8BZwrZD/view?usp=sharing
+                      https://drive.google.com/file/d/1yV-r7bDPvh05MqmRjMJb7NvFiMcmNt8F/view?usp=sharing
 
 UML State Diagram: https://drive.google.com/file/d/1W2eJ6AbohLsMB5cYotQnlu6vKF33-__N/view?usp=sharing
 
