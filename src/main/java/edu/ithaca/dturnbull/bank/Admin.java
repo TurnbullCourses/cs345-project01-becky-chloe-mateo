@@ -10,10 +10,9 @@ public class Admin extends AbstractBank {
 
     public String requestReport(AbstractAccount account){
         if(account.getSuspiciousActivity()==true){
-            System.out.print("There has been suspicious activity on this account");
+            System.out.print("There has been suspicious activity on this account "); 
             return AbstractAccount.transactionHistory;
         }
-
         return null;
         
     }
