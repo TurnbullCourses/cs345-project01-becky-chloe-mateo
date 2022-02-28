@@ -2,6 +2,8 @@ package edu.ithaca.dturnbull.bank;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import edu.ithaca.dturnbull.bank.InsufficientFundsException;
 
 class AbstractAccountTest {
@@ -27,10 +29,13 @@ class AbstractAccountTest {
     @Test
     void createAccountTest(){
         //Creates a Savings Account
-        BankTeller.createAccount("Savings","1234",0,1200);
+        Customer kim = new Customer("kim123","1234");
+        BankTeller.createAccount(kim, "Savings","1234",0,1200);
+        
         
         //Creates a Checking Account
-        BankTeller.createAccount("Checking","1234",0,0);
+        Customer tim = new Customer("tim123","1234");
+        BankTeller.createAccount(tim, "Checking","1234",0,0);
 
     }
 

@@ -1,22 +1,31 @@
 package edu.ithaca.dturnbull.bank;
 
+import java.util.ArrayList;
+
 public class BankTeller extends AbstractBankTeller {
 
+    static ArrayList<AbstractAccount> accounts;
+    
     public static AbstractAccount createAccount(Customer customer, String typeOfAccount, String password,
             double balance, double dailyMax) {
         if (typeOfAccount == "Savings") {
             AbstractAccount savingsAccount = new SavingsAccount(customer, balance, dailyMax);
             return savingsAccount;
-        } else {
+        } 
+        if(typeOfAccount=="Checking") {
             AbstractAccount checkingAccount = new CheckingAccount(customer, balance);
             return checkingAccount;
+        }
+        
+        else{
+            return null;
         }
 
     }
     public void closeAccount(){
 
     }
-    
+
     public double getBalance(AbstractAccount account) {
         return account.getBalance();
     }
