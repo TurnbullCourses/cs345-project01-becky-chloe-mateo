@@ -17,6 +17,7 @@ public class BankTeller extends AbstractBankTeller {
             double balance, double dailyMax) {
         if (typeOfAccount == "Savings") {
             AbstractAccount savingsAccount = new SavingsAccount(customer, balance, dailyMax);
+
             return savingsAccount;
         } 
         if(typeOfAccount=="Checking") {

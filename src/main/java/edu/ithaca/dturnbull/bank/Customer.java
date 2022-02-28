@@ -12,7 +12,7 @@ public class Customer {
         this.email = email;
         this.password = password;
         AbstractBank.logins.put(email, password);
-        ArrayList<AbstractAccount> accounts = new ArrayList<AbstractAccount>();
+        ArrayList<AbstractAccount> accounts = new ArrayList<>();
 
     }
 

@@ -2,7 +2,10 @@ package edu.ithaca.dturnbull.bank;
 
 public class ATM extends AbstractBankTeller {
 
-    public ATM(Customer customer){     
+    private Customer customer;
+
+    public ATM(Customer customer){   
+        this.customer=customer;  
     }
     
     public double getBalance(AbstractAccount account){
