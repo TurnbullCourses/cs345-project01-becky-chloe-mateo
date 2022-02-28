@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Customer {
     String email;
     String password;
-    static ArrayList<AbstractAccount> accounts;
+    private ArrayList<AbstractAccount> accounts;
 
     public Customer(String email,String password) {
         this.email = email;
         this.password = password;
         AbstractBank.logins.put(email, password);
-        ArrayList<AbstractAccount> accounts = new ArrayList<>();
+        accounts = new ArrayList<>();
 
     }
 
@@ -39,6 +39,10 @@ public class Customer {
 
     public ArrayList<AbstractAccount> getAccounts(){
         return accounts;
+    }
+
+    public void addAccount(AbstractAccount account){
+        accounts.add(account);
     }
 
 }

@@ -16,12 +16,13 @@ public class BankTeller extends AbstractBankTeller {
     public static AbstractAccount createAccount(Customer customer, String typeOfAccount, String password,
             double balance, double dailyMax) {
         if (typeOfAccount == "Savings") {
-            AbstractAccount savingsAccount = new SavingsAccount(customer, balance, dailyMax);
-
+            SavingsAccount savingsAccount = new SavingsAccount(customer, balance, dailyMax);
+            customer.addAccount(savingsAccount);
             return savingsAccount;
         } 
         if(typeOfAccount=="Checking") {
-            AbstractAccount checkingAccount = new CheckingAccount(customer, balance);
+            CheckingAccount checkingAccount = new CheckingAccount(customer, balance);
+            customer.addAccount(checkingAccount);
             return checkingAccount;
         }
         
