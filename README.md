@@ -26,9 +26,9 @@ Three Use Cases that you will implement first:
 Which classes & methods do you need to implement for these use cases?
 (Indicated which team member is responsible for the implemenation)
 1. AbstractAccount: Chloe, Mateo, Becky
-2. SavingsAccount: Becky, 
-3. CheckingAccount: 
-4. Customer: Becky, 
+2. SavingsAccount: Mateo, Becky
+3. CheckingAccount: Mateo, Chloe
+4. Customer: Becky, Chloe
 
 Diagrams:
 1. State: Chloe, Mateo, Becky
@@ -37,4 +37,5 @@ Diagrams:
 4. Customer Sequence: Chloe
 5. Admin Sequence: Mateo
 6. Teller Sequence: Becky
+7. User Test Script: Becky
 
