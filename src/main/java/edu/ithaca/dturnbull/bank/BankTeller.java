@@ -5,6 +5,13 @@ import java.util.ArrayList;
 public class BankTeller extends AbstractBankTeller {
 
     static ArrayList<AbstractAccount> accounts;
+    private String accountName;
+    private String password;
+
+    public BankTeller(String accountName, String password){
+        this.accountName=accountName;
+        this.password=password;
+    }
     
     public static AbstractAccount createAccount(Customer customer, String typeOfAccount, String password,
             double balance, double dailyMax) {
