@@ -3,7 +3,7 @@ public class CheckingAccount extends AbstractAccount{
 
     public CheckingAccount(Customer customer, double balance){
         super(balance);
-        Customer.accounts.add(this);
+        //Customer.accounts.add(this);
         AbstractBank.accounts.add(this);
     }
 
