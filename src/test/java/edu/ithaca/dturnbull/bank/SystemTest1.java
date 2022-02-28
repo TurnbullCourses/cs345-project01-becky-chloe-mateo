@@ -43,4 +43,25 @@ public class SystemTest1 {
         assertEquals(400, pamsSaving.getBalance());
         assertFalse(pamsSaving.getSuspiciousActivity());
     }
+
+    @Test //written by Chloe
+    void systemTest3() throws InsufficientFundsException{
+        Customer bts = new Customer("bts@mail.com","bts");
+        Admin adminAccount=new Admin("admin","bts");
+        BankTeller bankTeller=new BankTeller("bankTeller3","bts");
+        assertEquals(bts.getAccounts(),null);
+        assertTrue(bts.checkPassword("bts"));
+
+
+        CheckingAccount btsAccount=new CheckingAccount(bts, 1500); 
+        assertEquals(btsAccount.getHistory(), "");
+        
+        btsAccount.deposit(250);
+        btsAccount.withdraw(500);
+        assertFalse(btsAccount.getSuspiciousActivity());
+
+        SavingsAccount btsSavingsAccount = new SavingsAccount(bts,0,1200);
+        btsAccount.transfer(btsAccount, btsSavingsAccount, 500);
+        assertEquals(500, btsSavingsAccount.getBalance());
+    }
 }
