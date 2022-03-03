@@ -8,7 +8,6 @@ public class SystemTest1 {
         Customer jim = new Customer("jim123.com","1234");
         Admin adminAccount=new Admin("admin","1234");
         BankTeller bankTeller=new BankTeller("bankTeller","1234");
-        assertEquals(jim.getAccounts(),null);
         CheckingAccount jimsAccount=new CheckingAccount(jim, 600); 
         bankTeller.createAccount(jim, "Savings","1234",0,1200);
         
@@ -22,7 +21,7 @@ public class SystemTest1 {
         assertThrows(InsufficientFundsException.class,() -> CheckingAccount.transfer(jimsAccount, jamsAccount, 500));
         assertTrue(jimsAccount.getSuspiciousActivity());
 
-        assertEquals(adminAccount.requestReport(jimsAccount),"nullDeposit: 250.0, Withdraw: 500.0, ");
+        assertEquals(adminAccount.requestReport(jimsAccount),"Deposit: 250.0, Withdraw: 500.0, ");
 
     }
     @Test
