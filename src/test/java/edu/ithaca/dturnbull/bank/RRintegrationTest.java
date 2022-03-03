@@ -17,16 +17,16 @@ public class RRintegrationTest {
         assertEquals(600.01, account1.getBalance(), .001);
         assertThrows(IllegalArgumentException.class, () -> account1.deposit(-100));
         assertThrows(IllegalArgumentException.class, () -> account1.deposit(-0.01)); 
-        assertEquals(adminAccount.requestReport(account1),"nullDeposit: 0.01, ");
+        assertEquals(adminAccount.requestReport(account1),"Deposit: 0.01, ");
         account1.withdraw(20);
-        assertEquals(adminAccount.requestReport(account1),"nullDeposit: 0.01, Withdraw: 20.0, ");
+        assertEquals(adminAccount.requestReport(account1),"Deposit: 0.01, Withdraw: 20.0, ");
 
 
         //Suspicious transfer activity
         AbstractAccount bankAccount1 = new CheckingAccount(100);
         AbstractAccount bankAccount2 = new CheckingAccount(0);
         assertThrows(InsufficientFundsException.class,() -> CheckingAccount.transfer(bankAccount1, bankAccount2, 500));
-        assertEquals(adminAccount.requestReport(account1),"nullDeposit: 0.01, Withdraw: 20.0, ");
+        assertEquals(adminAccount.requestReport(account1),"Deposit: 0.01, Withdraw: 20.0, ");
 
         //Suspicious withdraw activity
         CheckingAccount checkAcc = new CheckingAccount(0); 
@@ -34,7 +34,7 @@ public class RRintegrationTest {
 
         assertEquals(100, checkAcc.getBalance(), 0.001);
         assertThrows(InsufficientFundsException.class, () -> checkAcc.withdraw(300));
-        assertEquals(adminAccount.requestReport(account1),"nullDeposit: 0.01, Withdraw: 20.0, Deposit: 100.0, ");
+        assertEquals(adminAccount.requestReport(account1),"Deposit: 0.01, Withdraw: 20.0, Deposit: 100.0, ");
     }
     
 }
